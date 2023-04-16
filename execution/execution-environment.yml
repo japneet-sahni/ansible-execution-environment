@@ -1,0 +1,9 @@
+version: 1
+
+dependencies: 
+  galaxy: requirements.yml
+
+additional_build_steps:
+  append:
+    - RUN pip install pyopenssl --upgrade
+    # Collection giving module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK' error

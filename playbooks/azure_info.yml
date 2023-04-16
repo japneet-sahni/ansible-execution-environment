@@ -1,0 +1,16 @@
+- name: Azure Collection Modules test
+  hosts: localhost
+  tasks:
+  - name: Get Virtualmachine Info
+    azure.azcollection.azure_rm_virtualmachine_info:
+      resource_group: japneetrg
+      name: test
+      auth_source: env
+    register: vminfo
+    environment:
+      AZURE_SUBSCRIPTION_ID: 
+      AZURE_CLIENT_ID: 
+      AZURE_SECRET: 
+      AZURE_TENANT: 
+  - debug:
+      var: vminfo
